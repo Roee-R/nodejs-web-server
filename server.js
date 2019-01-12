@@ -47,6 +47,9 @@ hbs.registerHelper('toUpperCase',(text)=>{
     return text.toUpperCase()
 })
 
+hbs.registerHelper('ProjectName',()=>{
+    return "My First Server on nodejs"
+})
 
 app.get('/',(req,res) =>{
         res.render('index', {
@@ -55,8 +58,11 @@ app.get('/',(req,res) =>{
         'description': 'On this page you can find all possible informaion you need.'
     })
 })
-app.get('/help1',(req,res) =>{
-    res.render('help.html')
+
+app.get('/projects',(req,res) =>{
+    res.render('projects', {
+    "welcome": "Wellcome to Roee's site",
+})
 })
 
 app.get('/about',(req,res)=>{
